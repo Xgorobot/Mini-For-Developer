@@ -1,0 +1,2 @@
+source /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/gdbinit/symbols
+source /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/gdbinit/connect

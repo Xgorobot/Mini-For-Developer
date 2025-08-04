@@ -1,0 +1,1584 @@
+Command: /home/jdx/.espressif/python_env/idf6.0_py3.11_env/bin/python /media/jdx/jdx/esp32_idf/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/uart_async_rxtxtasks.elf /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/bootloader/bootloader.elf -m '/home/jdx/.espressif/python_env/idf6.0_py3.11_env/bin/python' '/media/jdx/jdx/esp32_idf/esp-idf/tools/idf.py'
+ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6392
+load:0x40078000,len:15904
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-3618-g7f6e7f4506-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Jul  8 2025 00:24:34[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09d14h ( 40212) map[0m
+[0;32mI (101) esp_image: segment 1: paddr=00019d3c vaddr=3ff80000 size=00020h (    32) load[0m
+[0;32mI (102) esp_image: segment 2: paddr=00019d64 vaddr=3ffb0000 size=02258h (  8792) load[0m
+[0;32mI (109) esp_image: segment 3: paddr=0001bfc4 vaddr=40080000 size=04054h ( 16468) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=16054h ( 90196) map[0m
+[0;32mI (151) esp_image: segment 5: paddr=0003607c vaddr=40084054 size=0a6ech ( 42732) load[0m
+[0;32mI (175) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (175) boot: Disabling RNG early entropy source...[0m
+[0;32mI (186) cpu_start: Multicore app[0m
+[0;32mI (194) cpu_start: Pro cpu start user code[0m
+[0;32mI (194) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (194) app_init: Application information:[0m
+[0;32mI (194) app_init: Project name:     uart_async_rxtxtasks[0m
+[0;32mI (199) app_init: App version:      v5.5-dev-3618-g7f6e7f4506-dirty[0m
+[0;32mI (205) app_init: Compile time:     Jul  9 2025 23:07:11[0m
+[0;32mI (210) app_init: ELF file SHA256:  dbe71058e...[0m
+[0;32mI (214) app_init: ESP-IDF:          v5.5-dev-3618-g7f6e7f4506-dirty[0m
+[0;32mI (220) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (224) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (228) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (232) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (239) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (243) heap_init: At 3FFB2B38 len 0002D4C8 (181 KiB): DRAM[0m
+[0;32mI (249) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (254) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (260) heap_init: At 4008E740 len 000118C0 (70 KiB): IRAM[0m
+[0;32mI (266) spi_flash: detected chip: generic[0m
+[0;32mI (269) spi_flash: flash io: dio[0m
+[0;33mW (272) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (284) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (294) main_task: Started on CPU0[0m
+[0;32mI (304) main_task: Calling app_main()[0m
+[0;32mI (304) icm test: Starting ICM test[0m
+[0;32mI (304) icm test: I2C bus initialization: ESP_OK[0m
+[0;32mI (304) icm test: ICM20948 creation successfull![0m
+[0;32mI (314) icm test: 0xEA[0m
+[0;32mI (314) main_task: Returned from app_main()[0m
+[0;32mI (314) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (314) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (324) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (334) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (344) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (354) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (364) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (364) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (374) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (384) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (394) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (404) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (414) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (424) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (424) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (434) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (444) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (444) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (454) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (464) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (474) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (484) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (494) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (504) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (514) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (514) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (524) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (534) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (534) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (544) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (554) RX_TASK: 0x3ffb6464   00 00 00 3a 18 3a ff ff  0b 0a 00 af 0b 00 00 00  |...:.:..........|[0m
+[0;32mI (564) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (574) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (584) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (594) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (594) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (604) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (614) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (624) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (634) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (634) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (644) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (654) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (664) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (674) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (684) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (684) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (694) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (704) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (714) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (724) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (734) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (744) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (744) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (754) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (764) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (764) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (774) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (784) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (794) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (804) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (814) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (824) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (834) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (834) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (844) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (854) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (854) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (864) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (874) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (884) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (894) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (904) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (914) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (914) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (924) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (934) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (944) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (954) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (954) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (964) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (974) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (984) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (994) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1004) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1004) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1014) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1024) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1034) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1044) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1054) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1064) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1064) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1074) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1084) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1094) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1094) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1104) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1114) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1124) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1134) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1144) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1154) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1164) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1174) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1174) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1184) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1184) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1194) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1204) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1214) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1224) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1234) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1244) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1254) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1254) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1264) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1274) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1274) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1284) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1294) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1304) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1314) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1324) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1334) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1344) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1344) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1354) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1364) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1374) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1384) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1384) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1394) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1404) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1414) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1424) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1434) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1434) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1444) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1454) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1464) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1474) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1484) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1494) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1494) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1504) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1514) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1524) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1534) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1534) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1544) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1554) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1564) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1574) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3b 18 22  ff ff 2a 0a 00 24 07 00  |.....;."..*..$..|[0m
+[0;32mI (1584) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1594) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1604) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1604) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1614) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1624) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1624) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1634) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3d  |.:.......M.....=|[0m
+[0;32mI (1644) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (1654) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1664) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1674) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1684) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1694) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1694) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1704) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1714) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1714) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1724) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1734) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1744) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1754) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1764) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1774) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1784) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1784) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1794) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1804) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1814) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1814) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1824) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1834) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1844) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1854) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (1864) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (1874) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1874) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1884) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (1894) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (1904) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (1914) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (1924) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (1924) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (1934) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (1944) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (1954) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (1964) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3d  |.:.......M.....=|[0m
+[0;32mI (1964) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (1974) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (1984) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (1994) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2004) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2014) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2024) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2034) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2034) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2044) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2054) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2054) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2064) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2074) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2084) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2094) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2104) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2114) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2124) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2134) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2144) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2144) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2154) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2154) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2164) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2174) RX_TASK: 0x3ffb6474   00 3b 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.;.......M.....<|[0m
+[0;32mI (2184) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2194) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2204) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2214) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2224) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2224) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2234) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2244) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2244) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2254) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2264) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2274) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2284) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2294) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2304) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2314) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2314) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2324) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2334) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2344) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2354) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2354) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2364) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2374) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2384) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2394) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2404) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2404) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2414) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2424) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2434) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2444) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2454) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2464) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2464) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2474) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2484) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2494) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2494) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2504) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2514) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2524) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2534) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2544) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2554) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2564) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2574) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2574) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2584) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2584) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2594) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2604) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2614) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2624) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2634) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2644) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2654) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2654) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2664) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2674) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2684) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2684) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2694) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2704) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2714) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2724) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2734) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2744) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2754) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2754) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2764) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2774) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2784) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2784) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2794) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2804) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2814) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2824) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2834) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2844) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2844) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2854) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2864) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2874) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2884) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (2894) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (2894) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (2904) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (2914) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (2924) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (2934) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (2934) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (2944) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (2954) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (2964) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (2974) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (2984) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (2994) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3004) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3004) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3014) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3024) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3024) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3034) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3044) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3054) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3064) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3074) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3084) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3094) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3094) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3104) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3114) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3114) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3124) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3134) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3144) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3154) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3164) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3174) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3184) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3184) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3194) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3204) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3214) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3214) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3224) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3234) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3244) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3254) RX_TASK: 0x3ffb6474   00 3b 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.;.......M.....<|[0m
+[0;32mI (3264) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3274) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3284) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3284) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3294) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3304) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3314) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3324) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3324) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3334) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3344) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3354) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3364) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3374) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3374) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3384) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3394) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3404) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3414) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3424) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3434) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3434) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3444) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3454) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3464) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3464) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3474) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3484) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3494) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3504) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3514) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3524) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3534) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3544) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3544) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3554) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3554) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3564) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3574) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3584) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3594) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3604) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3614) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3a  17 c5 ff ff 29 0a 00 4c  |.......:....)..L|[0m
+[0;32mI (3624) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3624) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3634) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3644) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3644) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3654) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3664) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3674) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3684) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3694) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3704) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3714) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3714) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3724) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3734) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3744) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3754) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3754) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3764) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3774) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4c 06 00  |.....=.......L..|[0m
+[0;32mI (3784) RX_TASK: 0x3ffb6464   00 00 00 3a 19 39 ff ff  0b 0a 00 af 0b 00 00 00  |...:.9..........|[0m
+[0;32mI (3794) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3804) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3804) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3814) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3824) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3834) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3844) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3854) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3864) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3864) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3874) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 81  |.7.....;.R......|[0m
+[0;32mI (3884) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 01  ff ff 17 0a 00 4b 06 00  |.....=.......K..|[0m
+[0;32mI (3894) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3a ff ff  0b 0a 00 af 0b 00 00 00  |...:.:..........|[0m
+[0;32mI (3904) RX_TASK: 0x3ffb6474   00 3a 18 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (3904) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (3914) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (3924) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (3934) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (3944) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (3954) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (3964) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (3974) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (3974) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (3984) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 80  |.7.....;.R......|[0m
+[0;32mI (3994) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 02  ff ff 17 0a 00 4b 06 00  |.....=.......K..|[0m
+[0;32mI (3994) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3a ff ff  0b 0a 00 b0 0b 00 00 00  |...:.:..........|[0m
+[0;32mI (4004) RX_TASK: 0x3ffb6474   00 3a 17 de ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4014) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4024) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4034) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4044) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4054) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4064) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4064) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4074) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4084) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4084) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 80  |.7.....;.R......|[0m
+[0;32mI (4094) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 02  ff ff 17 0a 00 4b 06 00  |.....=.......K..|[0m
+[0;32mI (4104) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3a ff ff  0b 0a 00 b0 0b 00 00 00  |...:.:..........|[0m
+[0;32mI (4114) RX_TASK: 0x3ffb6474   00 3a 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4124) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4134) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4144) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4154) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4154) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4164) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4174) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4184) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4184) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4194) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 80  |.7.....;.R......|[0m
+[0;32mI (4204) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 02  ff ff 17 0a 00 4a 06 00  |.....=.......J..|[0m
+[0;32mI (4214) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3b ff ff  0b 0a 00 b0 0b 00 00 00  |...:.;..........|[0m
+[0;32mI (4224) RX_TASK: 0x3ffb6474   00 3a 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4234) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4244) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4244) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4254) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4264) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4274) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4284) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4294) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4294) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4304) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7f  |.7.....;.R......|[0m
+[0;32mI (4314) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 03  ff ff 17 0a 00 4a 06 00  |.....=.......J..|[0m
+[0;32mI (4324) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3b ff ff  0b 0a 00 b0 0b 00 00 00  |...:.;..........|[0m
+[0;32mI (4334) RX_TASK: 0x3ffb6474   00 3a 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4334) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4344) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4354) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4364) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4374) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4384) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4394) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4404) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4404) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4414) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7f  |.7.....;.R......|[0m
+[0;32mI (4424) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 03  ff ff 17 0a 00 4a 06 00  |.....=.......J..|[0m
+[0;32mI (4424) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3b ff ff  0b 0a 00 b0 0b 00 00 00  |...:.;..........|[0m
+[0;32mI (4434) RX_TASK: 0x3ffb6474   00 3a 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4444) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4454) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4464) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4474) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4484) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4494) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4504) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4504) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4514) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4524) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7f  |.7.....;.R......|[0m
+[0;32mI (4524) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 03  ff ff 17 0a 00 49 06 00  |.....=.......I..|[0m
+[0;32mI (4534) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3c ff ff  0b 0a 00 b0 0b 00 00 00  |...:.<..........|[0m
+[0;32mI (4544) RX_TASK: 0x3ffb6474   00 3a 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4554) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4564) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4574) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4584) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4594) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4594) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4604) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4614) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4614) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4624) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7f  |.7.....;.R......|[0m
+[0;32mI (4634) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 03  ff ff 17 0a 00 49 06 00  |.....=.......I..|[0m
+[0;32mI (4644) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3c ff ff  0b 0a 00 b0 0b 00 00 00  |...:.<..........|[0m
+[0;32mI (4654) RX_TASK: 0x3ffb6474   00 3a 18 dd ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4664) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4674) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4684) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4684) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4694) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4704) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4714) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4724) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4724) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4734) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7e  |.7.....;.R.....~|[0m
+[0;32mI (4744) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 04  ff ff 17 0a 00 48 06 00  |.....=.......H..|[0m
+[0;32mI (4754) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3d ff ff  0b 0a 00 b1 0b 00 00 00  |...:.=..........|[0m
+[0;32mI (4764) RX_TASK: 0x3ffb6474   00 3a 18 dc ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4774) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4774) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4784) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4794) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4804) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4814) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4824) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4834) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4834) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4844) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7e  |.7.....;.R.....~|[0m
+[0;32mI (4854) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 04  ff ff 17 0a 00 47 06 00  |.....=.......G..|[0m
+[0;32mI (4864) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3e ff ff  0b 0a 00 b2 0b 00 00 00  |...:.>..........|[0m
+[0;32mI (4864) RX_TASK: 0x3ffb6474   00 3a 18 db ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4874) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4884) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (4894) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (4904) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (4914) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (4924) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (4934) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (4944) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (4944) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (4954) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7d  |.7.....;.R.....}|[0m
+[0;32mI (4954) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 05  ff ff 17 0a 00 47 06 00  |.....=.......G..|[0m
+[0;32mI (4964) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3e ff ff  0b 0a 00 b2 0b 00 00 00  |...:.>..........|[0m
+[0;32mI (4974) RX_TASK: 0x3ffb6474   00 3a 18 db ff ff 0c 0a  00 4d 0b 00 00 00 00 3c  |.:.......M.....<|[0m
+[0;32mI (4984) RX_TASK: 0x3ffb6484   18 3d ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.=...........>.s|[0m
+[0;32mI (4994) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5004) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5014) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (5024) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (5024) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5034) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5044) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5044) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5054) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7d  |.7.....;.R.....}|[0m
+[0;32mI (5064) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 05  ff ff 17 0a 00 46 06 00  |.....=.......F..|[0m
+[0;32mI (5074) RX_TASK: 0x3ffb6464   00 00 00 3a 19 3f ff ff  0b 0a 00 b3 0b 00 00 00  |...:.?..........|[0m
+[0;32mI (5084) RX_TASK: 0x3ffb6474   00 3a 18 da ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5094) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (5104) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5114) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5124) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (5124) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (5134) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5144) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5154) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5154) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5164) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7d  |.7.....;.R.....}|[0m
+[0;32mI (5174) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 05  ff ff 17 0a 00 45 06 00  |.....=.......E..|[0m
+[0;32mI (5184) RX_TASK: 0x3ffb6464   00 00 00 3a 19 40 ff ff  0b 0a 00 b3 0b 00 00 00  |...:.@..........|[0m
+[0;32mI (5194) RX_TASK: 0x3ffb6474   00 3a 18 da ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5204) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (5214) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5214) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5224) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4c  |.......;....)..L|[0m
+[0;32mI (5234) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 21  ff ff 2a 0a 00 24 07 00  |.....<.!..*..$..|[0m
+[0;32mI (5244) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5254) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5264) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5264) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5274) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5284) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5294) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b5 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5304) RX_TASK: 0x3ffb6474   00 3a 18 d8 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5304) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+I E (5314) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:
+[1;31mE (5314) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (5314) task_wdt: Tasks currently running:[0m
+[1;31mE (5314) task_wdt: CPU 0: uart_rx_task[0m
+[1;31mE (5314) task_wdt: CPU 1: uart_tx_task[0m
+[1;31mE (5314) task_wdt: Print CPU 1 backtrace[0m
+
+3
+B) RtrTAS:  0430f464A:  3FfBf5 0f x4 08 25103 0FFB05 00 x4 3E 7788bxfF Bf A| 0..00.7.D.:0.3.FB
+4I0(
+3
+4) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|
+[0;32mI (5364) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (5374) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (5384) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5384) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5394) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5404) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5404) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5414) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5424) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5434) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3d  |.:.......N.....=|[0m
+[0;32mI (5444) RX_TASK: 0x3ffb6484   18 3b ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.;...........>.s|[0m
+[0;32mI (5454) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5464) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5474) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (5474) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (5484) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5494) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5504) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5504) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5514) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5524) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5534) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5544) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5554) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (5564) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5564) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5574) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (5584) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (5594) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5604) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5614) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5614) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5624) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5634) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5644) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5654) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5654) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (5664) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5674) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5684) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (5694) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (5704) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5714) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5724) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5724) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5734) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5744) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5754) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5754) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3d  |.:.......N.....=|[0m
+[0;32mI (5764) RX_TASK: 0x3ffb6484   18 3b ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.;...........>.s|[0m
+[0;32mI (5774) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5784) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5794) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (5804) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (5814) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5824) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5834) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5834) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5844) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5844) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5854) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5864) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5874) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (5884) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (5894) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (5904) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (5914) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (5914) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (5924) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (5934) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (5934) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (5944) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (5954) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 43 06 00  |.....=.......C..|[0m
+[0;32mI (5964) RX_TASK: 0x3ffb6464   00 00 00 3a 19 42 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.B..........|[0m
+[0;32mI (5974) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (5984) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (5994) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6004) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6004) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6014) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6024) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6034) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6044) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6044) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6054) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (6064) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 42 06 00  |.....=.......B..|[0m
+[0;32mI (6074) RX_TASK: 0x3ffb6464   00 00 00 3a 19 43 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.C..........|[0m
+[0;32mI (6084) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6094) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6094) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6104) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6114) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6124) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6134) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6144) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6154) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6154) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6164) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (6174) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 42 06 00  |.....=.......B..|[0m
+[0;32mI (6184) RX_TASK: 0x3ffb6464   00 00 00 3a 19 43 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.C..........|[0m
+[0;32mI (6184) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6194) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6204) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6214) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6224) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6234) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6244) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6254) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6264) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6264) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6274) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (6274) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 42 06 00  |.....=.......B..|[0m
+[0;32mI (6284) RX_TASK: 0x3ffb6464   00 00 00 3a 19 43 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.C..........|[0m
+[0;32mI (6294) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6304) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6314) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6324) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6334) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6344) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6354) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6354) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6364) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6374) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6374) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (6384) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 42 06 00  |.....=.......B..|[0m
+[0;32mI (6394) RX_TASK: 0x3ffb6464   00 00 00 3a 19 43 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.C..........|[0m
+[0;32mI (6404) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6414) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6424) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6434) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6444) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6444) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6454) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6464) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6474) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6474) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6484) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7c  |.7.....;.R.....||[0m
+[0;32mI (6494) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 06  ff ff 17 0a 00 42 06 00  |.....=.......B..|[0m
+[0;32mI (6504) RX_TASK: 0x3ffb6464   00 00 00 3a 19 43 ff ff  0b 0a 00 b6 0b 00 00 00  |...:.C..........|[0m
+[0;32mI (6514) RX_TASK: 0x3ffb6474   00 3a 18 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6524) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6534) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6534) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6544) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6554) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6564) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6574) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6584) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6584) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6594) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (6604) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 42 06 00  |.....=.......B..|[0m
+[0;32mI (6614) RX_TASK: 0x3ffb6464   00 00 00 3a 19 43 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.C..........|[0m
+[0;32mI (6624) RX_TASK: 0x3ffb6474   00 3b 18 d5 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.;.......N.....<|[0m
+[0;32mI (6624) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6634) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6644) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6654) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6664) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6674) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6684) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6694) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6694) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6704) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (6714) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (6714) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (6724) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6734) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6744) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6754) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6764) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6774) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6784) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6784) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6794) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6804) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6804) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (6814) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (6824) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (6834) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6844) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6854) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6864) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6874) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6874) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6884) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (6894) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (6904) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (6904) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (6914) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (6924) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (6934) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (6944) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (6954) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (6964) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (6974) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (6974) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (6984) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (6994) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7004) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7014) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7014) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7024) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7034) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7044) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7054) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7064) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7064) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7074) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7084) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7094) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7104) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7114) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7124) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7124) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7134) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7144) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7154) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7154) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7164) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7174) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7184) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7194) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3a  17 c5 ff ff 29 0a 00 4b  |.......:....)..K|[0m
+[0;32mI (7204) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7214) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7224) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7234) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7234) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7244) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7244) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7254) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7264) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7274) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7284) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7294) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7304) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7314) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7314) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7324) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7334) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7334) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7344) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7354) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7364) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7374) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7384) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7394) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7404) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7404) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7414) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7424) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7434) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7444) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7444) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7454) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7464) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7474) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7484) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7494) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7494) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7504) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7514) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7524) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7534) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7544) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7554) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7554) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7564) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7574) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7584) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7594) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7594) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7604) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7614) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7624) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7634) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7644) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7654) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7664) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7664) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7674) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7684) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7684) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7694) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7704) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7714) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7724) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7734) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7744) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7754) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7754) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7764) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7774) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7774) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7784) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7794) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7804) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7814) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7824) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7834) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7844) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7844) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7854) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7864) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7874) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7874) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7884) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (7894) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (7904) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (7914) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (7924) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (7934) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (7934) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (7944) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (7954) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (7964) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (7974) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (7984) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (7984) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (7994) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8004) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (8014) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (8024) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8024) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8034) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8044) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8054) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8064) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8074) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8084) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8094) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8094) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8104) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8114) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 41 06 00  |.....=.......A..|[0m
+[0;32mI (8114) RX_TASK: 0x3ffb6464   00 00 00 3a 19 44 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.D..........|[0m
+[0;32mI (8124) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8134) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8144) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8154) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8164) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8174) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8184) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8194) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8204) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8204) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8214) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8214) RX_TASK: 0x3ffb6454   07 00 00 00 00 3c 19 08  ff ff 17 0a 00 40 06 00  |.....<.......@..|[0m
+[0;32mI (8224) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8234) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8244) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8254) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8264) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8274) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8284) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8284) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8294) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8304) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8304) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8314) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8324) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8334) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8344) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8354) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8364) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8374) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8374) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8384) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8394) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8404) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8414) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8414) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8424) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8434) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8444) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8454) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8464) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8464) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8474) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8484) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8494) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8504) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8514) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8524) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8524) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8534) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8544) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8554) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8554) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8564) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8574) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8584) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8594) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8604) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8614) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8624) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8634) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8634) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8644) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8644) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8654) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8664) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8674) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8684) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8694) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8704) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8714) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8714) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8724) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8734) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8744) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8744) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8754) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8764) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8774) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8784) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8794) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8804) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8814) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8814) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8824) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8834) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8844) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8844) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8854) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8864) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8874) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8884) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8894) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (8904) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (8904) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (8914) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (8924) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (8934) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (8944) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (8954) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (8954) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (8964) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (8974) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (8984) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (8994) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (8994) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9004) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9014) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9024) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9034) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9044) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9054) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9064) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9064) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9074) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9084) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9084) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9094) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9104) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9114) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9124) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9134) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9144) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9154) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9154) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9164) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9174) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9174) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9184) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9194) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9204) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9214) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9224) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9234) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9244) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9244) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9254) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9264) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9274) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9274) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9284) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9294) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9304) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9314) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9324) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9334) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9344) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9344) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9354) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9364) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9374) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9384) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9384) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9394) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9404) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9414) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9424) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9434) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9434) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9444) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9454) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9464) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9474) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9484) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9494) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9494) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9504) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9514) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9524) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9524) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9534) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9544) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9554) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9564) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9574) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9584) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9594) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9604) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9604) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9614) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9614) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9624) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9634) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9644) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9654) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9664) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9674) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3a  17 c5 ff ff 29 0a 00 4b  |.......:....)..K|[0m
+[0;32mI (9684) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9684) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9694) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9704) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9704) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9714) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9724) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9734) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9744) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9754) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9764) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9774) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9774) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9784) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9794) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9804) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9814) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9814) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9824) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9834) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9844) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9854) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9864) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9864) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9874) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9884) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (9894) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (9904) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (9914) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (9924) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (9924) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (9934) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (9944) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (9954) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (9964) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (9964) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (9974) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (9984) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (9994) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10004) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10014) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10024) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10034) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10034) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10044) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10054) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10054) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10064) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10074) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10084) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10094) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10104) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10114) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10124) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10134) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10144) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10144) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10154) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10154) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10164) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10174) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10184) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10194) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10204) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10214) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10224) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10234) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10234) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10244) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10254) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10254) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10264) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10274) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10284) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3d  |.:.......N.....=|[0m
+[0;32mI (10294) RX_TASK: 0x3ffb6484   18 3b ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.;...........>.s|[0m
+[0;32mI (10304) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10314) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3eE (10314) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[1;31mE (10314) task_wdt:  - IDLE1 (CPU 1)[0m
+[1;31mE (10314) task_wdt: Tasks currently running:[0m
+[1;31mE (10314) task_wdt: CPU 0: uart_rx_task[0m
+[1;31mE (10314) task_wdt: CPU 1: uart_tx_task[0m
+[1;31mE (10314) task_wdt: Print CPU 1 backtrace[0m
+
+7
+B6 ktrffe:  04 0|4..A:0.3.>B.5.0.|
+00 (201:4)3FXBT5SK: x43fEb7484 x F0Bb4A0 00000070D :0x3bF 77 0 f ff 29 0a 00 4b  |.......;....)..K|
+[0;32mI (10354) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10364) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10374) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10384) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10384) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10394) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10404) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10414) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10424) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10434) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10444) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10444) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10454) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10464) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10474) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10484) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10494) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10494) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10504) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10514) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10524) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10534) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10544) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10544) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10554) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10564) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10574) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10584) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10594) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10604) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10604) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10614) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10624) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10634) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10644) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10644) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10654) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10664) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10674) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10684) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10694) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10704) RX_TASK: 0x3ffb64e4   00 3a 18 1d                                       |.:..|[0m
+[0;32mI (10714) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10714) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10724) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10734) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10744) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10744) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10754) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10764) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10774) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10784) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3a  17 c5 ff ff 29 0a 00 4b  |.......:....)..K|[0m
+[0;32mI (10794) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10804) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10814) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10824) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10824) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10834) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10844) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10844) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10854) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10864) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10874) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10884) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (10894) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (10904) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (10914) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (10924) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (10934) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (10934) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (10944) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (10944) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (10954) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (10964) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (10974) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (10984) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (10994) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11004) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11014) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11024) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11024) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11034) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11044) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11044) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (11054) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (11064) RX_TASK: 0x3ffb6464   00 00 00 3a 18 46 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.F..........|[0m
+[0;32mI (11074) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11084) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11094) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11104) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11114) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11124) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11124) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11134) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11144) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11144) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11154) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (11164) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 40 06 00  |.....=.......@..|[0m
+[0;32mI (11174) RX_TASK: 0x3ffb6464   00 00 00 3a 19 45 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.E..........|[0m
+[0;32mI (11184) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11194) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11204) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11214) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11224) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11224) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11234) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11244) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11254) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11254) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11264) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7b  |.7.....;.R.....{|[0m
+[0;32mI (11274) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 07  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11284) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11294) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11304) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11314) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11324) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11324) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11334) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11344) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11354) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11364) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11364) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11374) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (11384) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11394) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11404) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11414) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11424) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11424) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11434) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11444) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11454) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11464) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11474) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11474) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11484) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (11494) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11504) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11514) RX_TASK: 0x3ffb6474   00 3a 17 d7 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11524) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11524) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11534) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11544) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11554) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11564) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11574) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11584) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11584) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11594) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (11604) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11614) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11624) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11624) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11634) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11644) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11654) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11664) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11674) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11684) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11694) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11694) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11704) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (11714) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11724) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11724) RX_TASK: 0x3ffb6474   00 3b 18 d5 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.;.......N.....<|[0m
+[0;32mI (11734) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11744) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11754) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11764) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11774) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11784) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11794) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (11804) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11804) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11814) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (11824) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11824) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11834) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11844) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11854) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11864) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11874) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11884) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (11894) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (11904) RX_TASK: 0x3ffb64e4   00 3a 18 1d                                       |.:..|[0m
+[0;32mI (11914) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (11914) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (11924) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (11924) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (11934) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (11944) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (11954) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (11964) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (11974) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (11984) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (11994) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (12004) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12004) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12014) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12024) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12024) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12034) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12044) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12054) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12064) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12074) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12084) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12094) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (12104) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (12104) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12114) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12124) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12124) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12134) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12144) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12154) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12164) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12174) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12184) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12194) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12204) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4b  |.......;....)..K|[0m
+[0;32mI (12204) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 22  ff ff 2a 0a 00 24 07 00  |.....<."..*..$..|[0m
+[0;32mI (12214) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12224) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12234) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12234) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12244) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12254) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12264) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12274) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12284) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12294) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12304) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12304) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4a  |.......;....)..J|[0m
+[0;32mI (12314) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 23  ff ff 2a 0a 00 24 07 00  |.....<.#..*..$..|[0m
+[0;32mI (12324) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12334) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12344) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12344) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12354) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12364) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12374) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12384) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12394) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12404) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12404) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12414) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4a  |.......;....)..J|[0m
+[0;32mI (12424) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 23  ff ff 2a 0a 00 24 07 00  |.....<.#..*..$..|[0m
+[0;32mI (12434) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12444) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12454) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12454) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12464) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12474) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12484) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12494) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12504) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12504) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12514) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12524) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4a  |.......;....)..J|[0m
+[0;32mI (12534) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 23  ff ff 2a 0a 00 24 07 00  |.....<.#..*..$..|[0m
+[0;32mI (12544) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12554) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12564) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12564) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12574) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12584) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12594) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12604) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12604) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12614) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12624) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12634) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4a  |.......;....)..J|[0m
+[0;32mI (12644) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 23  ff ff 2a 0a 00 24 07 00  |.....<.#..*..$..|[0m
+[0;32mI (12654) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12664) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12674) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12674) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12684) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12694) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12704) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12704) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12714) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12724) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12734) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m
+[0;32mI (12744) RX_TASK: 0x3ffb64b4   00 b4 0a 00 00 00 00 3b  17 c4 ff ff 29 0a 00 4a  |.......;....)..J|[0m
+[0;32mI (12754) RX_TASK: 0x3ffb64c4   0b 00 00 00 00 3c 18 23  ff ff 2a 0a 00 24 07 00  |.....<.#..*..$..|[0m
+[0;32mI (12764) RX_TASK: 0x3ffb64d4   00 00 00 3b 17 4e ff ff  2b 0a 00 56 05 00 00 00  |...;.N..+..V....|[0m
+[0;32mI (12774) RX_TASK: 0x3ffb64e4   00 3a 17 1e                                       |.:..|[0m
+[0;32mI (12784) RX_TASK: Read 180 bytes: '���'[0m
+[0;32mI (12784) RX_TASK: 0x3ffb6434   fe fe fc 00 30 80 80 00  c0 00 00 f8 ff ff 15 0a  |....0...........|[0m
+[0;32mI (12794) RX_TASK: 0x3ffb6444   00 37 04 00 00 00 00 3b  18 52 ff ff 16 0a 00 7a  |.7.....;.R.....z|[0m
+[0;32mI (12804) RX_TASK: 0x3ffb6454   07 00 00 00 00 3d 19 08  ff ff 17 0a 00 3e 06 00  |.....=.......>..|[0m
+[0;32mI (12804) RX_TASK: 0x3ffb6464   00 00 00 3a 19 47 ff ff  0b 0a 00 b7 0b 00 00 00  |...:.G..........|[0m
+[0;32mI (12814) RX_TASK: 0x3ffb6474   00 3a 18 d6 ff ff 0c 0a  00 4e 0b 00 00 00 00 3c  |.:.......N.....<|[0m
+[0;32mI (12824) RX_TASK: 0x3ffb6484   18 3c ff ff 0d 0a 00 14  0a 00 00 00 00 3e 19 73  |.<...........>.s|[0m
+[0;32mI (12834) RX_TASK: 0x3ffb6494   ff ff 1f 0a 00 f5 03 00  00 00 00 3c 17 8b ff ff  |...........<....|[0m
+[0;32mI (12844) RX_TASK: 0x3ffb64a4   20 0a 00 b8 02 00 00 00  00 3e 17 c6 ff ff 21 0a  | ........>....!.|[0m

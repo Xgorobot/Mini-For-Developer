@@ -1,0 +1,6 @@
+source "/media/jdx/jdx/esp32_idf/esp-idf/components/bootloader/Kconfig.projbuild"
+source "/media/jdx/jdx/esp32_idf/esp-idf/components/esp_app_format/Kconfig.projbuild"
+source "/media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/Kconfig.projbuild"
+source "/media/jdx/jdx/esp32_idf/esp-idf/components/esptool_py/Kconfig.projbuild"
+source "/media/jdx/jdx/esp32_idf/esp-idf/components/partition_table/Kconfig.projbuild"
+source "/media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/main/Kconfig.projbuild"

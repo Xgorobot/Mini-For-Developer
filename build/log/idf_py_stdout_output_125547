@@ -1,0 +1,48 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/jdx/.espressif/python_env/idf6.0_py3.11_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks
+-- Existing sdkconfig '/media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/sdkconfig' renamed to '/media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/sdkconfig.old'.
+-- Found Git: /usr/bin/git (found version "2.25.1") 
+-- Minimal build - ON
+-- The C compiler identification is GNU 14.2.0
+-- The CXX compiler identification is GNU 14.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: /home/jdx/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc
+-- Check for working C compiler: /home/jdx/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc
+-- Check for working C compiler: /home/jdx/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /home/jdx/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-g++
+-- Check for working CXX compiler: /home/jdx/.espressif/tools/xtensa-esp-elf/esp-14.2.0_20241119/xtensa-esp-elf/bin/xtensa-esp32-elf-g++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32
+-- Project sdkconfig file /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/sdkconfig
+-- Compiler supported targets: xtensa-esp-elf
+-- Found Python3: /home/jdx/.espressif/python_env/idf6.0_py3.11_env/bin/python (found version "3.11.5") found components: Interpreter 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- USING O3
+-- App "uart_async_rxtxtasks" version: v5.5-dev-3618-g7f6e7f4506-dirty
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/esp-idf/esp_system/ld/sections.ld.in
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.api.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libgcc.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-data.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.syscalls.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.libc-funcs.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom/esp32/ld/esp32.rom.newlib-reent-funcs.ld
+-- Adding linker script /media/jdx/jdx/esp32_idf/esp-idf/components/soc/esp32/ld/esp32.peripherals.ld
+-- Components: app_update bootloader bootloader_support cxx efuse esp_app_format esp_bootloader_format esp_common esp_driver_gpio esp_driver_uart esp_hw_support esp_mm esp_partition esp_pm esp_ringbuf esp_rom esp_security esp_system esp_timer esptool_py freertos hal heap log main mbedtls newlib partition_table pthread soc spi_flash xtensa
+-- Component paths: /media/jdx/jdx/esp32_idf/esp-idf/components/app_update /media/jdx/jdx/esp32_idf/esp-idf/components/bootloader /media/jdx/jdx/esp32_idf/esp-idf/components/bootloader_support /media/jdx/jdx/esp32_idf/esp-idf/components/cxx /media/jdx/jdx/esp32_idf/esp-idf/components/efuse /media/jdx/jdx/esp32_idf/esp-idf/components/esp_app_format /media/jdx/jdx/esp32_idf/esp-idf/components/esp_bootloader_format /media/jdx/jdx/esp32_idf/esp-idf/components/esp_common /media/jdx/jdx/esp32_idf/esp-idf/components/esp_driver_gpio /media/jdx/jdx/esp32_idf/esp-idf/components/esp_driver_uart /media/jdx/jdx/esp32_idf/esp-idf/components/esp_hw_support /media/jdx/jdx/esp32_idf/esp-idf/components/esp_mm /media/jdx/jdx/esp32_idf/esp-idf/components/esp_partition /media/jdx/jdx/esp32_idf/esp-idf/components/esp_pm /media/jdx/jdx/esp32_idf/esp-idf/components/esp_ringbuf /media/jdx/jdx/esp32_idf/esp-idf/components/esp_rom /media/jdx/jdx/esp32_idf/esp-idf/components/esp_security /media/jdx/jdx/esp32_idf/esp-idf/components/esp_system /media/jdx/jdx/esp32_idf/esp-idf/components/esp_timer /media/jdx/jdx/esp32_idf/esp-idf/components/esptool_py /media/jdx/jdx/esp32_idf/esp-idf/components/freertos /media/jdx/jdx/esp32_idf/esp-idf/components/hal /media/jdx/jdx/esp32_idf/esp-idf/components/heap /media/jdx/jdx/esp32_idf/esp-idf/components/log /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/main /media/jdx/jdx/esp32_idf/esp-idf/components/mbedtls /media/jdx/jdx/esp32_idf/esp-idf/components/newlib /media/jdx/jdx/esp32_idf/esp-idf/components/partition_table /media/jdx/jdx/esp32_idf/esp-idf/components/pthread /media/jdx/jdx/esp32_idf/esp-idf/components/soc /media/jdx/jdx/esp32_idf/esp-idf/components/spi_flash /media/jdx/jdx/esp32_idf/esp-idf/components/xtensa
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build
