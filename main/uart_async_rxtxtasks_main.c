@@ -14,6 +14,8 @@
 #include "string.h"
 #include "driver/gpio.h"
 #include "icm20948.h"
+#include "esp_task_wdt.h"
+
 static const int RX_BUF_SIZE = 1024;
 #define I2C_MASTER_SCL_IO  19        /*!< gpio number for I2C master clock */
 #define I2C_MASTER_SDA_IO  18        /*!< gpio number for I2C master data  */
@@ -22,18 +24,29 @@ static const int RX_BUF_SIZE = 1024;
 static const char *TAG = "icm test";
 static icm20948_handle_t icm20948 = NULL;
 
-#define TXD_PIN (GPIO_NUM_4)
-#define RXD_PIN (GPIO_NUM_5)
+#define TXD_PIN (GPIO_NUM_5)
+#define RXD_PIN (GPIO_NUM_4)
 
 #define TXD_PIN1 (GPIO_NUM_14)
 #define RXD_PIN1 (GPIO_NUM_13)
+#define BLINK_LED_PIN GPIO_NUM_22
 #define HLS_PRESENT_POSITION_L 56
 #define HLS_MODE 0x21
 #define HLS_KP 0x15
 #define HLS_KD 0x16
 icm20948_acce_value_t acce,acce1;
 icm20948_gyro_value_t gyro,gyro1;
+uint8_t* data_state;
+uint8_t* data_state1;
+uint8_t* data_buff;
+uint8_t rxBytes;
+uint8_t rxBytes1;
+uint8_t rxBytesbuff;
+uint8_t flag=0;
 uint8_t pBuf[20];
+uint8_t sync_buf[40];
+bool read_lock = false;
+bool read_ready = false;
 static esp_err_t i2c_bus_init(void)
 {
 	i2c_config_t conf;
@@ -99,6 +112,22 @@ static esp_err_t icm20948_configure(icm20948_acce_fs_t acce_fs, icm20948_gyro_fs
 
 	return ret;
 }
+void led_init()
+{
+    gpio_config_t io_conf = {};
+    //disable interrupt
+    io_conf.intr_type = GPIO_INTR_DISABLE;
+    //set as output mode
+    io_conf.mode = GPIO_MODE_OUTPUT;
+    //bit mask of the pins that you want to set,e.g.21
+    io_conf.pin_bit_mask = 1ULL << BLINK_LED_PIN;
+    //disable pull-down mode
+    io_conf.pull_down_en = GPIO_PULLDOWN_DISABLE;
+    //disable pull-up mode
+    io_conf.pull_up_en = GPIO_PULLUP_ENABLE;
+    //configure GPIO with the given settings
+    gpio_config(&io_conf);
+}
 void init_pbuf()
 {
     int i=0;
@@ -116,7 +145,9 @@ void init_pbuf()
 	pBuf[5] = ~checkSum;
 }
 void init(void) {
-
+    data_state = (uint8_t*) malloc(RX_BUF_SIZE+1);
+    data_state1 = (uint8_t*) malloc(RX_BUF_SIZE+1);
+    data_buff = (uint8_t*) malloc(RX_BUF_SIZE+1);
     const uart_config_t uart_config1 = {
         .baud_rate = 1000000,
         .data_bits=UART_DATA_8_BITS,                //8位数据位
@@ -132,7 +163,7 @@ void init(void) {
     uart_set_pin(UART_NUM_2, TXD_PIN1, RXD_PIN1, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
 
     const uart_config_t uart_config = {
-        .baud_rate = 115200,
+        .baud_rate = 1000000,
         .data_bits = UART_DATA_8_BITS,
         .parity = UART_PARITY_DISABLE,
         .stop_bits = UART_STOP_BITS_1,
@@ -156,6 +187,12 @@ int sendData3(unsigned char* data, int length)
     // ESP_LOGI(logName, "Wrote %d bytes", txBytes);
     return txBytes;
 }
+int sendDatapi(unsigned char* data, int length)
+{
+    const int txBytes = uart_write_bytes(UART_NUM_1, data, length);
+    // ESP_LOGI(logName, "Wrote %d bytes", txBytes);
+    return txBytes;
+}
 int sendData(const char* logName, const char* data)
 {
     float temperature = 25.6f;
@@ -172,15 +209,30 @@ int sendData(const char* logName, const char* data)
 
     return txBytes;
 }
-
-static void tx_task(void *arg)
+void sync_buf_init(uint8_t* id, uint8_t length)
 {
-    static const char *TX_TASK_TAG = "TX_TASK";
-    esp_log_level_set(TX_TASK_TAG, ESP_LOG_INFO);
-    while (1) {
-        sendData(TX_TASK_TAG, "Hello world");
-        vTaskDelay(200 / portTICK_PERIOD_MS);
-    }
+    int i;
+	uint8_t checkSum = 0x00;
+    int rxBytes;
+    // uint8_t rBuf[30];
+    sync_buf[0] = 0xff;
+	sync_buf[1] = 0xff;
+    sync_buf[2] = 0xfe;//id
+	sync_buf[3] = 4 + length;//length
+	sync_buf[4] = 0x82;//order
+	sync_buf[5] = 0x38;//addr
+	sync_buf[6] = 8;//nB
+    for(i=0;i<length;i++)
+        sync_buf[7+i] = id[i];
+    for(i=2;i<7+length;i++)
+	    checkSum = checkSum + sync_buf[i];
+	sync_buf[7+length] = ~checkSum;
+}
+int sync_read_fast(uint8_t* rev)
+{
+    sendData3(sync_buf, 8+5);
+    rxBytes = uart_read_bytes(UART_NUM_2, rev, RX_BUF_SIZE, 1 / portTICK_PERIOD_MS);
+    return rxBytes;
 }
 int sync_read(uint8_t* id, uint8_t length, uint8_t* rev)
 {
@@ -201,7 +253,7 @@ int sync_read(uint8_t* id, uint8_t length, uint8_t* rev)
 	    checkSum = checkSum + rBuf[i];
 	rBuf[7+length] = ~checkSum;
     sendData3(rBuf, 8+length);
-    rxBytes = uart_read_bytes(UART_NUM_2, rev, RX_BUF_SIZE, 5 / portTICK_PERIOD_MS);
+    rxBytes = uart_read_bytes(UART_NUM_2, rev, RX_BUF_SIZE, 1 / portTICK_PERIOD_MS);
     return rxBytes;
 }
 int read_nB(uint8_t id, uint8_t num, uint8_t addr, uint8_t* data)
@@ -294,12 +346,15 @@ static void rx_task(void *arg)
     static const char *RX_TASK_TAG = "RX_TASK";
     // esp_err_t ret1, ret2;
     esp_log_level_set(RX_TASK_TAG, ESP_LOG_INFO);
-    int rxBytes;
-    uint8_t id[2];
-    
+    // int rxBytes;
+    uint8_t id[6];
+    uint8_t flag_led=0;
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
     id[0]=33;
     id[1]=32;
+    id[2]=41;
+    id[3]=12;
+    id[4]=22;
     // rxBytes = read_mode(33, data);
     // ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);
     // vTaskDelay(200 / portTICK_PERIOD_MS);
@@ -310,18 +365,161 @@ static void rx_task(void *arg)
     // ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);
     // vTaskDelay(200 / portTICK_PERIOD_MS);
     while (1) {
-        // rxBytes = read_nB(33, 1, HLS_KD, data);
-        rxBytes = sync_read(id, 2, data);
-        ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);
-        vTaskDelay(200 / portTICK_PERIOD_MS);
+        // while (read_lock == true);
+        if(flag==1)
+        {
+            rxBytes = sync_read(id, 5, data_state);
+            // ESP_LOGI(RX_TASK_TAG, "read data: %d", rxBytes);
+            // ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data_state, rxBytes, ESP_LOG_INFO);
+            // if(read_lock)
+            // {
+            //     // memcpy(data_buff, data_state, rxBytes);
+            //     // rxBytesbuff = rxBytes;
+            //     ESP_LOGI(RX_TASK_TAG, "send data to pi: %d", rxBytes);
+            //     sendDatapi(data_state, rxBytes);
+            //     ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data_state, rxBytes, ESP_LOG_INFO);
+            //     // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_buff, rxBytesbuff, ESP_LOG_INFO);
+            //     read_lock = false;
+            // }
+         
+            if(read_lock == false)
+            {
+                memcpy(data_buff, data_state, rxBytes);
+                rxBytesbuff = rxBytes;
+                read_ready = false;
+            }
+            else if (read_lock == true)
+            {
+                read_ready=true;
+                /* code */
+            }
+            
+            // rxBytes = sync_read_fast(data_state);
+            flag = 0;
         }
+        else if(flag == 0)
+        {
+            rxBytes1 = sync_read(id, 5, data_state1);
+            // ESP_LOGI(RX_TASK_TAG, "read data: %d", rxBytes1);
+            // ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data_state1, rxBytes1, ESP_LOG_INFO);
+            // if(read_lock)
+            // {
+            //     ESP_LOGI(RX_TASK_TAG, "send data to pi: %d", rxBytes1);
+            //     sendDatapi(data_state1, rxBytes1);
+            //     ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data_state1, rxBytes1, ESP_LOG_INFO);
+            //     // memcpy(data_buff, data_state1, rxBytes1);
+            //     // rxBytesbuff = rxBytes1;
+            //     read_lock = false;
+            // }
+            if(read_lock == false)
+            {
+                memcpy(data_buff, data_state1, rxBytes1);
+                rxBytesbuff = rxBytes1;
+            }
+            else if (read_lock == true)
+            {
+                read_ready=true;
+                /* code */
+            }
+            // rxBytes1 = sync_read_fast(data_state1);
+            flag = 1;
+        }
+
+        if(rxBytesbuff == 70)
+            gpio_set_level(BLINK_LED_PIN, flag);
+    
+        
+        // rxBytes = read_nB(33, 1, HLS_KD, data);
+        // rxBytes = sync_read(id, 5, data);
+        // ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);
+        vTaskDelay(10 / portTICK_PERIOD_MS);
+        // gpio_set_level(BLINK_LED_PIN, flag);
+    }
     free(data);
 }
-
+static void tx_task(void *arg)
+{
+    static const char *TX_TASK_TAG = "TX_TASK";
+    int rxBytespi=0;  
+    uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
+    uint8_t id[6];
+    id[0]=33;
+    id[1]=32;
+    id[2]=41;
+    id[3]=12;
+    id[4]=22;
+    esp_log_level_set(TX_TASK_TAG, ESP_LOG_INFO);
+    // esp_task_wdt_add(NULL);
+    while (1) {
+        // sendData(TX_TASK_TAG, "Hello world");
+        // esp_task_wdt_reset();
+        rxBytespi = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 0.01 / portTICK_PERIOD_MS);
+        if (rxBytespi != 0)
+        {
+            // ESP_LOGI(TX_TASK_TAG, "read data: %d", rxBytespi);
+            // sendDatapi(data_state, 20);
+            // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data, rxBytespi, ESP_LOG_INFO);
+            // read_lock = true;
+            // while (!read_ready)
+            // {
+            //     vTaskDelay(4 / portTICK_PERIOD_MS);
+            //     /* code */
+            // }
+            
+            // while (read_lock)
+            // {
+            //     vTaskDelay(5 / portTICK_PERIOD_MS);
+            // }
+            rxBytesbuff = sync_read(id, 5, data_buff);//加入陀螺仪（分开，不要运算）加入指令输入 加入调试功能
+            // ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytesbuff);
+            sendDatapi(data_buff, rxBytesbuff);
+            // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_buff, rxBytesbuff, ESP_LOG_INFO);
+            // read_lock = false;
+            // if(flag == 1)
+            // {
+            //     ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytes1);
+            //     sendDatapi(data_state1, rxBytes1);
+            //     ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_state1, rxBytes1, ESP_LOG_INFO);
+            // }
+            // else
+            // {
+            //     ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytes);
+            //     sendDatapi(data_state, rxBytes);
+            //     ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_state, rxBytes, ESP_LOG_INFO);
+            // }
+            // read_lock = false;
+        }
+        // else
+        // {
+        //     vTaskDelay(5 / portTICK_PERIOD_MS);
+        // }
+    }
+}
+void someFunction(void* arg)
+{
+    // vTaskDelay(5 / portTICK_PERIOD_MS);
+}
 void app_main(void)
 {
+    uint8_t id[6];
+    id[0]=33;
+    id[1]=32;
+    id[2]=41;
+    id[3]=12;
+    id[4]=22;
+    // esp_task_wdt_config_t twdt_config = {
+    //     .timeout_ms = 10000,  // 10秒超时
+    //     .idle_core_mask = 0,  // 不监控IDLE任务
+    //     .trigger_panic = true
+    // };
+    // esp_task_wdt_init(&twdt_config);
+
+    // rtc_wdt_disable();
+    sync_buf_init(id, 5);
     init();
+    led_init();
     init_pbuf();
+    gpio_set_level(BLINK_LED_PIN, 1);
     ESP_LOGI(TAG, "Starting ICM test");
 	esp_err_t ret = i2c_bus_init();
 	ESP_LOGI(TAG, "I2C bus initialization: %s", esp_err_to_name(ret));
@@ -330,6 +528,7 @@ void app_main(void)
 		ESP_LOGE(TAG, "ICM configuration failure");
 		vTaskDelete(NULL);
 	}
-    xTaskCreate(rx_task, "uart_rx_task", 1024*2, NULL, configMAX_PRIORITIES, NULL);
-    xTaskCreate(tx_task, "uart_tx_task", 1024*2, NULL, configMAX_PRIORITIES-1, NULL);
+    // xTaskCreate(someFunction, "HumanReadableNameofTask", 4096, NULL, tskIDLE_PRIORITY, NULL);
+    // xTaskCreate(rx_task, "uart_rx_task", 1024*2, NULL, 5, NULL);
+    xTaskCreate(tx_task, "uart_tx_task", 1024*2, NULL, 6, NULL);
 }
