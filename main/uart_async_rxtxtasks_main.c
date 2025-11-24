@@ -231,7 +231,7 @@ void sync_buf_init(uint8_t* id, uint8_t length)
 int sync_read_fast(uint8_t* rev)
 {
     sendData3(sync_buf, 8+5);
-    rxBytes = uart_read_bytes(UART_NUM_2, rev, RX_BUF_SIZE, 1 / portTICK_PERIOD_MS);
+    rxBytes = uart_read_bytes(UART_NUM_2, rev, RX_BUF_SIZE, 0.1 / portTICK_PERIOD_MS);
     return rxBytes;
 }
 int sync_read(uint8_t* id, uint8_t length, uint8_t* rev)
@@ -240,20 +240,26 @@ int sync_read(uint8_t* id, uint8_t length, uint8_t* rev)
 	uint8_t checkSum = 0x00;
     int rxBytes;
     uint8_t rBuf[30];
+    int buff_size;
     rBuf[0] = 0xff;
 	rBuf[1] = 0xff;
     rBuf[2] = 0xfe;//id
 	rBuf[3] = 4 + length;//length
 	rBuf[4] = 0x82;//order
 	rBuf[5] = 0x38;//addr
-	rBuf[6] = 8;//nB
+	rBuf[6] = 8;//nB  pos 2B vel 2B load 2B volt 1B temp 1B 
     for(i=0;i<length;i++)
         rBuf[7+i] = id[i];
     for(i=2;i<7+length;i++)
 	    checkSum = checkSum + rBuf[i];
 	rBuf[7+length] = ~checkSum;
     sendData3(rBuf, 8+length);
-    rxBytes = uart_read_bytes(UART_NUM_2, rev, RX_BUF_SIZE, 1 / portTICK_PERIOD_MS);
+    // vTaskDelay(0.1 / portTICK_PERIOD_MS);
+    if(length==12)
+        buff_size = 168;
+    else
+        buff_size = 70;
+    rxBytes = uart_read_bytes(UART_NUM_2, rev, buff_size, 20 / portTICK_PERIOD_MS);
     return rxBytes;
 }
 int read_nB(uint8_t id, uint8_t num, uint8_t addr, uint8_t* data)
@@ -442,19 +448,51 @@ static void tx_task(void *arg)
     static const char *TX_TASK_TAG = "TX_TASK";
     int rxBytespi=0;  
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
-    uint8_t id[6];
+    uint8_t id[12];
     id[0]=33;
     id[1]=32;
-    id[2]=41;
-    id[3]=12;
-    id[4]=22;
+    id[2]=31;
+
+    id[3]=43;
+    id[4]=42;
+    id[5]=41;
+
+    id[6]=23;
+    id[7]=22;
+    id[8]=21;
+
+    id[9]=13;
+    id[10]=12;
+    id[11]=11;
+    uint8_t id1[12];
+    id1[0]=13;
+    id1[1]=12;
+    id1[2]=11;
+
+    id1[3]=23;
+    id1[4]=22;
+    id1[5]=21;
+
+    id1[6]=33;
+    id1[7]=32;
+    id1[8]=31;
+
+    id1[9]=43;
+    id1[10]=42;
+    id1[11]=41;
     esp_log_level_set(TX_TASK_TAG, ESP_LOG_INFO);
     // esp_task_wdt_add(NULL);
     while (1) {
         // sendData(TX_TASK_TAG, "Hello world");
         // esp_task_wdt_reset();
+        
         rxBytespi = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 0.01 / portTICK_PERIOD_MS);
-        if (rxBytespi != 0)
+        if(rxBytespi > 0)
+        {
+            ESP_LOGI(TX_TASK_TAG, "rev data: %d", rxBytespi);
+            uart_flush(UART_NUM_1);
+        }
+        if (rxBytespi == 5)
         {
             // ESP_LOGI(TX_TASK_TAG, "read data: %d", rxBytespi);
             // sendDatapi(data_state, 20);
@@ -470,9 +508,82 @@ static void tx_task(void *arg)
             // {
             //     vTaskDelay(5 / portTICK_PERIOD_MS);
             // }
-            rxBytesbuff = sync_read(id, 5, data_buff);//加入陀螺仪（分开，不要运算）加入指令输入 加入调试功能
-            // ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytesbuff);
+            uart_flush(UART_NUM_2);
+            rxBytesbuff = sync_read(id, 12, data_buff);//加入陀螺仪（分开，不要运算）加入指令输入 加入调试功能
+            ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytesbuff);
             sendDatapi(data_buff, rxBytesbuff);
+            
+            // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_buff, rxBytesbuff, ESP_LOG_INFO);
+            // read_lock = false;
+            // if(flag == 1)
+            // {
+            //     ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytes1);
+            //     sendDatapi(data_state1, rxBytes1);
+            //     ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_state1, rxBytes1, ESP_LOG_INFO);
+            // }
+            // else
+            // {
+            //     ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytes);
+            //     sendDatapi(data_state, rxBytes);
+            //     ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_state, rxBytes, ESP_LOG_INFO);
+            // }
+            // read_lock = false;
+        }
+        else if (rxBytespi == 4)
+        {
+            // ESP_LOGI(TX_TASK_TAG, "read data: %d", rxBytespi);
+            // sendDatapi(data_state, 20);
+            // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data, rxBytespi, ESP_LOG_INFO);
+            // read_lock = true;
+            // while (!read_ready)
+            // {
+            //     vTaskDelay(4 / portTICK_PERIOD_MS);
+            //     /* code */
+            // }
+            
+            // while (read_lock)
+            // {
+            //     vTaskDelay(5 / portTICK_PERIOD_MS);
+            // }
+            uart_flush(UART_NUM_2);
+            rxBytes1 = sync_read(id1, 5, data_state);//加入陀螺仪（分开，不要运算）加入指令输入 加入调试功能
+            ESP_LOGI(TX_TASK_TAG, "send gyro: %d", rxBytes1);
+            sendDatapi(data_state, rxBytes1);
+            // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_buff, rxBytesbuff, ESP_LOG_INFO);
+            // read_lock = false;
+            // if(flag == 1)
+            // {
+            //     ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytes1);
+            //     sendDatapi(data_state1, rxBytes1);
+            //     ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_state1, rxBytes1, ESP_LOG_INFO);
+            // }
+            // else
+            // {
+            //     ESP_LOGI(TX_TASK_TAG, "send data: %d", rxBytes);
+            //     sendDatapi(data_state, rxBytes);
+            //     ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_state, rxBytes, ESP_LOG_INFO);
+            // }
+            // read_lock = false;
+        }
+        else if (rxBytespi == 7)
+        {
+            // ESP_LOGI(TX_TASK_TAG, "read data: %d", rxBytespi);
+            // sendDatapi(data_state, 20);
+            // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data, rxBytespi, ESP_LOG_INFO);
+            // read_lock = true;
+            // while (!read_ready)
+            // {
+            //     vTaskDelay(4 / portTICK_PERIOD_MS);
+            //     /* code */
+            // }
+            
+            // while (read_lock)
+            // {
+            //     vTaskDelay(5 / portTICK_PERIOD_MS);
+            // }
+            // rxBytesbuff = sync_read(id, 5, data_buff);//加入陀螺仪（分开，不要运算）加入指令输入 加入调试功能
+            ESP_LOGI(TX_TASK_TAG, "read");
+            // sendDatapi(data_buff, rxBytesbuff);
             // ESP_LOG_BUFFER_HEXDUMP(TX_TASK_TAG, data_buff, rxBytesbuff, ESP_LOG_INFO);
             // read_lock = false;
             // if(flag == 1)
@@ -528,6 +639,8 @@ void app_main(void)
 		ESP_LOGE(TAG, "ICM configuration failure");
 		vTaskDelete(NULL);
 	}
+    sync_read(id, 5, data_buff);
+    vTaskDelay(5 / portTICK_PERIOD_MS);
     // xTaskCreate(someFunction, "HumanReadableNameofTask", 4096, NULL, tskIDLE_PRIORITY, NULL);
     // xTaskCreate(rx_task, "uart_rx_task", 1024*2, NULL, 5, NULL);
     xTaskCreate(tx_task, "uart_tx_task", 1024*2, NULL, 6, NULL);

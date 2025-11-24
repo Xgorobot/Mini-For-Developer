@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "uart_async_rxtxtasks",
-    "project_version":    "239125e-dirty",
+    "project_version":    "8f0010e-dirty",
     "project_path":       "/media/jdx/jdx/esp/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks",
     "idf_path":           "/media/jdx/jdx/esp/esp-idf",
     "build_dir":          "/media/jdx/jdx/esp/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build",
