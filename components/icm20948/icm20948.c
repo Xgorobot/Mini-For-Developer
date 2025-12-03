@@ -4,8 +4,20 @@
 #include <sys/time.h>
 #include "esp_system.h"
 #include "driver/i2c.h"
-
 #include "icm20948.h"
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_log.h"
+#include "esp_err.h"
+
+static const char *TAG = "ICM20948";
+static icm20948_handle_t icm20948 = NULL;
+
+#define I2C_MASTER_SCL_IO  19        /*!< gpio number for I2C master clock */
+#define I2C_MASTER_SDA_IO  18        /*!< gpio number for I2C master data  */
+#define I2C_MASTER_NUM     I2C_NUM_0 /*!< I2C port number for master dev */
+#define I2C_MASTER_FREQ_HZ 400000    /*!< I2C master clock frequency */
 
 #define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
 #define BYTE_TO_BINARY(byte)                                                                                           \
@@ -501,6 +513,74 @@ icm20948_enable_dlpf(icm20948_handle_t sensor, bool enable)
 		tmp &= 0xFE;
 
 	ret = icm20948_write(sensor, ICM20948_GYRO_CONFIG_1, &tmp, 1);
+	if (ret != ESP_OK)
+		return ESP_FAIL;
+
+	return ret;
+}
+
+
+esp_err_t i2c_bus_init(void)
+{
+    i2c_config_t conf;
+    conf.mode = I2C_MODE_MASTER;
+    conf.sda_io_num = (gpio_num_t)I2C_MASTER_SDA_IO;
+    conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
+    conf.scl_io_num = (gpio_num_t)I2C_MASTER_SCL_IO;
+    conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
+    conf.master.clk_speed = I2C_MASTER_FREQ_HZ;
+    conf.clk_flags = I2C_SCLK_SRC_FLAG_FOR_NOMAL;
+
+    esp_err_t ret = i2c_param_config(I2C_MASTER_NUM, &conf);
+    if (ret != ESP_OK)
+        return ret;
+
+    return i2c_driver_install(I2C_MASTER_NUM, conf.mode, 0, 0, 0);
+}
+
+
+esp_err_t icm20948_configure(icm20948_acce_fs_t acce_fs, icm20948_gyro_fs_t gyro_fs)
+{
+	esp_err_t ret;
+
+	/*
+	 * One might need to change ICM20948_I2C_ADDRESS to ICM20948_I2C_ADDRESS_1
+	 * if address pin pulled low (to GND)
+	 */
+	icm20948 = icm20948_create(I2C_MASTER_NUM, ICM20948_I2C_ADDRESS_1);
+	if (icm20948 == NULL) {
+		ESP_LOGE(TAG, "ICM20948 create returned NULL!");
+		return ESP_FAIL;
+	}
+	ESP_LOGI(TAG, "ICM20948 creation successfull!");
+
+	ret = icm20948_reset(icm20948);
+	if (ret != ESP_OK)
+		return ret;
+
+	vTaskDelay(10 / portTICK_PERIOD_MS);
+
+	ret = icm20948_wake_up(icm20948);
+	if (ret != ESP_OK)
+		return ret;
+
+	ret = icm20948_set_bank(icm20948, 0);
+	if (ret != ESP_OK)
+		return ret;
+
+	uint8_t device_id;
+	ret = icm20948_get_deviceid(icm20948, &device_id);
+	if (ret != ESP_OK)
+		return ret;
+	ESP_LOGI(TAG, "0x%02X", device_id);
+	if (device_id != ICM20948_WHO_AM_I_VAL)
+		return ESP_FAIL;
+
+	ret = icm20948_set_gyro_fs(icm20948, gyro_fs);
+	if (ret != ESP_OK)
+		return ESP_FAIL;
+
+	ret = icm20948_set_acce_fs(icm20948, acce_fs);
 	if (ret != ESP_OK)
 		return ESP_FAIL;
 

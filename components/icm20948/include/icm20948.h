@@ -356,4 +356,16 @@ esp_err_t icm20948_set_acce_dlpf(icm20948_handle_t sensor, icm20948_dlpf_t dlpf_
  */
 esp_err_t icm20948_set_gyro_dlpf(icm20948_handle_t sensor, icm20948_dlpf_t dlpf_gyro);
 
+/**
+ * @brief 配置ICM20948传感器
+ * @param acce_fs 加速度计量程
+ * @param gyro_fs 陀螺仪量程
+ * @return esp_err_t ESP错误码
+ */
+esp_err_t icm20948_configure(icm20948_acce_fs_t acce_fs, icm20948_gyro_fs_t gyro_fs);
+/** 
+ * @brief 初始化I2C
+ * @return ESP错误码
+*/
+esp_err_t i2c_bus_init(void);
 #endif // !__ICM20948_H__

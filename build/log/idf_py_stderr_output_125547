@@ -1,1 +1,0 @@
-Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/home/jdx/.espressif/python_env/idf6.0_py3.11_env/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32 -DCCACHE_ENABLE=0 /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks

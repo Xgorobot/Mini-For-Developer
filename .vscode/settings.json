@@ -1,0 +1,12 @@
+{
+  "idf.flashType": "UART",
+  "idf.portWin": "COM6",
+  "files.associations": {
+    "*.vue": "vue",
+    "*.wpy": "vue",
+    "*.wxml": "html",
+    "*.wxss": "css",
+    "stdlib.h": "c",
+    "inttypes.h": "c"
+  }
+}

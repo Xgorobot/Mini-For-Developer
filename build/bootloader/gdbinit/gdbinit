@@ -1,2 +1,0 @@
-source /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/bootloader/gdbinit/symbols
-source /media/jdx/jdx/esp32_idf/esp-idf/examples/peripherals/uart/uart_async_rxtxtasks/build/bootloader/gdbinit/connect
